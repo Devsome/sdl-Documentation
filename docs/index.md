@@ -1,4 +1,2 @@
----
-template: overrides/home.html
-title: Material for MkDocs
----
+title: Startpage
+template: home.html

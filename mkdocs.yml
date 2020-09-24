@@ -1,0 +1,40 @@
+site_name: sdl Documentation
+site_description: "A simple and clean documentation for silkroad-laravel cms."
+
+copyright: Copyright &copy; 2020 Devsome
+
+repo_url: https://github.com/Devsome/silkroad-laravel
+
+extra_javascript:
+  - particles.min.js
+
+
+theme:
+  name: material
+  features:
+    - tabs
+  language: en
+  theme:
+    features:
+      - instant
+    palette:
+      scheme: default
+      primary: indigo
+      accent: blue
+  custom_dir: 'docs/overrides'
+  # 404 page
+  static_templates:
+    - 404.html
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/realDevsome
+    - icon: fontawesome/brands/github
+      link: https://github.com/Devsome
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
