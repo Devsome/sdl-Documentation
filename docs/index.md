@@ -1,2 +1,2 @@
-title: Startpage
+title: Home
 template: home.html

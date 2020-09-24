@@ -36,6 +36,8 @@ extra:
 
 # Page tree
 nav:
-  - Home: index.md
-  - Introduction: getting-started.md
-  - Features: features.md
+  - Introduction:
+    - introduction.md
+    - getting-started.md
+  - Features:
+    - features.md
