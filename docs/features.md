@@ -1,4 +1,5 @@
 title: Features
+template: extrahead.html
 
 # Features
 

@@ -1,4 +1,5 @@
 title: Introduction
+template: extrahead.html
 
 Hello! I am a documentary, may not be perfect but was built with love.
 I will show you how to set up the project, work on it and find your way around.
