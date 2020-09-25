@@ -11,6 +11,8 @@ extra_javascript:
 
 theme:
   name: material
+  favicon: images/favicon/favicon.ico
+  logo: images/logo.svg
   features:
     - tabs
   language: en
