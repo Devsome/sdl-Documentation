@@ -1,5 +1,5 @@
 site_name: sdl Documentation
-site_description: "A simple and clean documentation for silkroad-laravel cms."
+site_description: "A complete documentation for the project Silkroad Dev Laravel CMS based on the framework Laravel."
 
 copyright: Copyright &copy; 2020 Devsome
 
@@ -22,7 +22,6 @@ theme:
       primary: indigo
       accent: blue
   custom_dir: 'docs/overrides'
-  # 404 page
   static_templates:
     - 404.html
 
@@ -34,9 +33,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Devsome
 
+google_analytics:
+  - UA-179003559-1
+  - auto
+
 # Page tree
 nav:
-  - Introduction:
+  - Home:
     - introduction.md
     - getting-started.md
   - Features:
