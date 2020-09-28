@@ -42,7 +42,6 @@ nav:
     - introduction.md
     - getting-started.md
     - styling.md
-  - Features:
-    - features.md
+  - Features: features.md
   - Windows Guide:
     - windows-guide.md
