@@ -14,7 +14,7 @@ theme:
   favicon: images/favicon/favicon.ico
   logo: images/logo.svg
   features:
-    - tabs
+    tabs: true
   language: en
   theme:
     palette:
