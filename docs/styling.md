@@ -1,9 +1,6 @@
 title: Styling
 template: extrahead.html
 
-Modify javascript / scss styling
-
-
 ### npm
 
 Install npm for all the dependencies you need, for that you need to be in the root folder of that project.

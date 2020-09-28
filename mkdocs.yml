@@ -39,7 +39,13 @@ google_analytics:
 nav:
   - Home:
     - "introduction.md"
-    - "getting-started.md"
+    - Getting started:
+      - "getting-started.md"
+      - "cloning.md"
+      - "server.md"
+      - "sro-database.md"
+      - "config-env.md"
+      - "config-commands.md"
     - "styling.md"
     - Configuration:
       - "config.md"
