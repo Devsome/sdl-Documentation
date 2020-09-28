@@ -1,4 +1,4 @@
-title: Getting started
+title: Installation
 template: extrahead.html
 
 This guide is for Debian/Ubuntu (vServer), if you want to install it on a Windows, use <a href="/windows-guide">this</a> guide.

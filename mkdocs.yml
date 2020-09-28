@@ -36,12 +36,13 @@ google_analytics:
   - UA-179003559-1
   - auto
 
-# Page tree
 nav:
-  - Home:
-    - introduction.md
-    - getting-started.md
-    - styling.md
-  - Features: features.md
+  - Home: index.md
+  - Getting started:
+    - "introduction.md"
+    - "getting-started.md"
+    - "styling.md"
+  - Features:
+    - "features.md"
   - Windows Guide:
-    - windows-guide.md
+    - "windows-guide.md"
