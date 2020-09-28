@@ -41,6 +41,11 @@ nav:
     - "introduction.md"
     - "getting-started.md"
     - "styling.md"
+    - Configuration:
+      - "config.md"
+      - "config-language.md"
+      - "config-timers.md"
+      - "config-vouchers.md"
   - Features:
     - "features.md"
   - Windows Guide:
