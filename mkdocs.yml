@@ -41,6 +41,7 @@ google_analytics:
 
 # Page tree
 nav:
+  - introduction.md
   - Home:
     - introduction.md
     - getting-started.md
