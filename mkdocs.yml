@@ -36,6 +36,9 @@ google_analytics:
   - UA-179003559-1
   - auto
 
+markdown_extensions:
+  - attr_list
+
 nav:
   - Home:
     - "introduction.md"
@@ -53,6 +56,11 @@ nav:
       - "config-timers.md"
       - "config-vouchers.md"
   - Features:
-    - "features.md"
+    - "features/overview.md"
+    - Frontend:
+      - "features/frontend/index.md"
+      - "features/frontend/account.md"
+    - Backend:
+      - "features/backend/index.md"
   - Windows Guide:
     - "windows-guide.md"

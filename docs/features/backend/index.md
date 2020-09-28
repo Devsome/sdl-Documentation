@@ -1,34 +1,10 @@
-title: Features
+title: Overview
 template: extrahead.html
-
-# Features
-
-#### Frontend
- - Account
- - - Register with two (web & game) passwords
- - - Forgot Password
- - - Referral System
- - - Basic Settings
- - - Char list with additional information
- - Character page with Item information
- - Voucher System
- - Ticket System
- - Web Inventory
- - - Gold Transfer to Web
- - - Item Transfer to Web
- - Auctions House
- - - Create own Auction
- - - Bid on other Items
- - - Instant buy some other Items
- - - Notifications about your Item / Auction
- - News System
- - Download System
- - Ranking System
- - PayPal Donations
- - Website is full mobile responsive
 
 #### Backend
 - Dashboard with Basic Informations
+- - Simple ToDos at the startpage
+- - PieChart about the sox drops
 - News Controller
 - Download Controller
 - Image Controller (News, Downloads, Backlinks)
@@ -36,6 +12,9 @@ template: extrahead.html
 - - Settings for custom Categories, Priorities
 - - Live Chatting with instant Messages
 - Voucher Controller with expired at method
+- Donations Controller
+- - Settings about the Donations
+- - Logging
 - Backlinks Controller
 - Supporters Online Controller
 - Auctions House
@@ -56,3 +35,8 @@ template: extrahead.html
 - - SMC
 - - Users Created - Graph for daily information
 - - Blocked Users
+
+<figure>
+  <img src="/images/project/backend/index.png" width="800" />
+  <figcaption>Backend Dashboard</figcaption>
+</figure>
