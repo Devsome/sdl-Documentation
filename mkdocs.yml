@@ -36,9 +36,6 @@ google_analytics:
   - UA-179003559-1
   - auto
 
-markdown_extensions:
-  - attr_list
-
 nav:
   - Home:
     - "introduction.md"
