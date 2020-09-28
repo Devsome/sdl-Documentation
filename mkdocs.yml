@@ -11,16 +11,15 @@ extra_javascript:
 
 theme:
   name: material
+  features:
+    - tabs
   favicon: images/favicon/favicon.ico
   logo: images/logo.svg
-  features:
-    tabs: true
   language: en
-  theme:
-    palette:
-      scheme: default
-      primary: indigo
-      accent: blue
+  palette:
+    scheme: default
+    primary: indigo
+    accent: blue
   custom_dir: 'docs/overrides'
   static_templates:
     - 404.html
