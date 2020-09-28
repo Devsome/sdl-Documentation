@@ -17,8 +17,6 @@ theme:
     - tabs
   language: en
   theme:
-    features:
-      - instant
     palette:
       scheme: default
       primary: indigo
@@ -41,7 +39,6 @@ google_analytics:
 
 # Page tree
 nav:
-  - introduction.md
   - Home:
     - introduction.md
     - getting-started.md
