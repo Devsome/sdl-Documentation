@@ -37,8 +37,7 @@ google_analytics:
   - auto
 
 nav:
-  - Home: index.md
-  - Getting started:
+  - Home:
     - "introduction.md"
     - "getting-started.md"
     - "styling.md"
