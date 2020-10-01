@@ -61,3 +61,5 @@ nav:
       - "features/backend/index.md"
   - Windows Guide:
     - "windows-guide.md"
+  - FAQ:
+    - "faq.md"
