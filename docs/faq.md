@@ -11,6 +11,7 @@ template: extrahead.html
 4. <a href="#tables-are-empty">Tables are empty</a>
 5. <a href="#images-are-not-shown">Images are not shown</a>
 6. <a href="#multi-language">I don't need multi language</a>
+7. <a href="#discord-widget">Discord widget not working</a>
 
 <hr>
 
@@ -19,6 +20,7 @@ template: extrahead.html
 > You want to see the error message instead of "Server Error xxx"?
 Then edit the `.env` and put the `APP_DEBUG=true` `DEBUGBAR_ENABLED=true`
 After that you will see a error message instead of server error.
+> When you done editing the `.env` file run `php artisan config:cache`
 
 ## How can I see the backend?
 
@@ -52,3 +54,7 @@ Just open the `config/app.php` and search for `locale_enabled`, there you can de
 After that you need to run that command `php artisan config:cache` to recache your whole config and make the changes visible.
 
 > But if you are saying you need one more language, check the `resources/lang` folder. For each language you need a separated folder. That folder name is the key in the `locale_enabled` array.
+
+## Discord widget
+
+> Your Discord server needs server-widgets activated. Then it can take some time to make it work.
