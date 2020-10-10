@@ -12,6 +12,7 @@ template: extrahead.html
 5. <a href="#images-are-not-shown">Images are not shown</a>
 6. <a href="#multi-language">I don't need multi language</a>
 7. <a href="#discord-widget">Discord widget not working</a>
+8. <a href="#git-pull">There is no tracking information for current branch.</a>
 
 <hr>
 
@@ -58,3 +59,12 @@ After that you need to run that command `php artisan config:cache` to recache yo
 ## Discord widget
 
 > Your Discord server needs server-widgets activated. Then it can take some time to make it work.
+
+## Git pull
+
+> When you are trying to use `git pull` but there is a error message that there is no tracking information for current branch use this Command.
+
+```bash
+git remote add origin https://github.com/Devsome/silkroad-laravel.git
+git pull origin master --rebase
+```
