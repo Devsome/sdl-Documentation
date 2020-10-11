@@ -39,3 +39,11 @@ This is how the public folder will look like:
 You can see the `themes/test-theme/css/main.css`
 
 Download the test-theme.zip <a href="/customtheme/test-theme.zip">here</a>.
+
+
+### Hint
+After you changed your theme in the `.env` you need to run these commands.
+
+```bash
+   php artisan config:clear && php artisan view:clear && php artisan cache:clear
+ ```
