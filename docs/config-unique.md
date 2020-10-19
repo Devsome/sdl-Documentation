@@ -8,7 +8,7 @@ To make it work follow these steps.
 3. Run `php artisan migrate` to get the newest Unique Table + Procedure.
     1. Table `SRO_VT_LOG.uniquekilllogs` should be created.
     2. Procedure `SRO_VT_LOG._ExecUniquekilllogs` should be created.
-
+4. Run `composer dump-autoload`
 
 You are probably wondering how I enter the Unique Kills now. For this you have to execute this Exec command.
 It does not matter if you send the MobName or real name.
