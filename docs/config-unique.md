@@ -24,3 +24,6 @@ EXEC _ExecUniquekilllogs @CharName16 = 'Devsome', @UniqueName = 'Captain Ivy';
 ```
 
 As long as the MobName or real name is stored in the Config file, they will be found.
+
+
+> Just to remind you, you need any second tool to execute the procedure.
