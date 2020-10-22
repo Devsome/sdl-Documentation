@@ -31,7 +31,7 @@ extra:
       link: https://twitter.com/realDevsome
     - icon: fontawesome/brands/github
       link: https://github.com/Devsome
-    - icon: fontawesome/link
+    - icon: fontawesome/solid/link
       link: https://www.elitepvpers.com/forum/members/1199443-devsome.html
 
 google_analytics:
