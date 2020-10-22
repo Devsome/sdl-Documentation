@@ -37,23 +37,23 @@ sudo apt-get install -y mysql-server
 
 ```bash
 sudo add-apt-repository -y ppa:ondrej/php && sudo apt-get update
-sudo apt-get install -y php7.3-cli php7.3-fpm php7.3-mysql php7.3-curl php-memcached php7.3-dev php7.3-sqlite3 php7.3-mbstring php7.3-xml freetds-common freetds-bin unixodbc php7.3-sybase
-sudo apt install -y php7.3-bcmath
-sudo apt install -y zip unzip php7.3-zip
-sudo apt-cache search php7.3
-sudo apt install -y php7.3-zip
+sudo apt-get install -y php7.4-cli php7.4-fpm php7.4-mysql php7.4-curl php-memcached php7.4-dev php7.4-sqlite3 php7.3-mbstring php7.4-xml freetds-common freetds-bin unixodbc php7.4-sybase
+sudo apt install -y php7.4-bcmath
+sudo apt install -y zip unzip php7.4-zip
+sudo apt-cache search php7.4
+sudo apt install -y php7.4-zip
 ```
 
 For that php.ini
 
 ```bash
-sudo sed -i.bak 's/^;cgi.fix_pathinfo.*$/cgi.fix_pathinfo = 1/g' /etc/php/7.3/fpm/php.ini
+sudo sed -i.bak 's/^;cgi.fix_pathinfo.*$/cgi.fix_pathinfo = 1/g' /etc/php/7.4/fpm/php.ini
 ```
 
-Restarting php7.3-fpm
+Restarting php7.4-fpm
 
 ```bash
-sudo service php7.3-fpm restart
+sudo service php7.4-fpm restart
 ```
 
 ### ACL & NPM
@@ -127,7 +127,7 @@ server {
 
 	# PHP FPM configuration.
 	location ~* \.php$ {
-		fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+		fastcgi_pass unix:/run/php/php7.4-fpm.sock;
 		fastcgi_index index.php;
 		fastcgi_split_path_info ^(.+\.php)(.*)$;
 		include /etc/nginx/fastcgi_params;
@@ -151,7 +151,7 @@ EOF
 
 ```bash
 sudo service nginx restart
-sudo service php7.3-fpm restart
+sudo service php7.4-fpm restart
 sudo service mysql restart
 ```
 
