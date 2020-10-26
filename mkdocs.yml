@@ -55,6 +55,7 @@ nav:
       - "config-timers.md"
       - "config-vouchers.md"
       - "config-unique.md"
+      - "config-donations.md"
     - Custom Themes:
       - "customtheme/start.md"
   - Features:

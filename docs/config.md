@@ -8,3 +8,4 @@ Most customizations can be done in the backend, some have to be done directly in
 - <a href="/config-timers/">Timers</a>
 - <a href="/config-vouchers/">Vouchers</a>
 - <a href="/config-unique/">Unique</a>
+- <a href="/config-donations/">Donations</a>
