@@ -8,6 +8,8 @@ Currently are two Payment methods enabled.
 
 Hopefully you got the newest files, else you can get it with `git pull`. Once you updated your files you need to install the new dependencies with `composer install`. After that you can insert the new Payment method **Stripe** with that seeder command.
 
+Then migrate the new Table with `php artisan migrate`
+
 ```bash
 php artisan db:seed --class="DonationMethodsSeeder"
 ```
