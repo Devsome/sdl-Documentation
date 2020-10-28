@@ -67,6 +67,7 @@ Also you need to add this to the `_AddLogChar` procedure for the Job and PvP sta
 
 ```sql
 --Character kills table recorder (finish) , all credits goes to #HB
+
 IF (@EventID = 20) -- PVP
 BEGIN
     IF ( @desc LIKE '%Trader, Neutral, no freebattle team%'    -- Trader
@@ -84,9 +85,7 @@ BEGIN
         -- Get job type
         DECLARE @jobString VARCHAR(10) = LTRIM(RTRIM(SUBSTRING (@desc, 5, 7)))
         DECLARE @jobType INT = CASE
-            WHEN @jobString LIKE 'Trader' THEN 1
-            WHEN @jobString LIKE 'Robber' THEN 2
-            WHEN @jobString LIKE 'Hunter' THEN 3
+            WHEN @jobString IN ('Trader', 'Robber', 'Hunter') THEN (SELECT JobType FROM SRO_VT_SHARD.._CharTrijob WHERE CharID = @killeriD)
             ELSE 0 END
         -- Delete original log
         DELETE FROM _LogEventChar WHERE CharID = @CharID AND EventID = 20
@@ -109,8 +108,12 @@ BEGIN
             -- If it's normal PVP Kill, write real character names
             SET @strDesc = '[' + @killername + '] has just killed [' + @CharName + '] in [' + @jobDesc + '] mode on [' + CONVERT(NVARCHAR(30), GETDATE(), 0) + ']'
         END
-        -- Update the log
-        INSERT INTO pvp_records VALUES (@killername, @killeriD, @CharName, @CharID, @jobType, @strPos, @strDesc, GETDATE())
+
+		IF (@killeriD > 0)
+		BEGIN
+			-- Update the log
+			INSERT INTO pvp_records VALUES (@killername, @killeriD, @CharName, @CharID, @jobType, GETDATE(), @strPos, @strDesc)
+		END
     END
 END
 ```
