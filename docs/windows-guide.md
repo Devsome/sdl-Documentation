@@ -137,6 +137,58 @@ BEGIN
 END
 ```
 
+Also you need to add this to the `_AddLogChar` procedure for the Job and PvP stats
+
+```sql
+--Character kills table recorder (finish) , all credits goes to #HB
+IF (@EventID = 20) -- PVP
+BEGIN
+    IF ( @desc LIKE '%Trader, Neutral, no freebattle team%'    -- Trader
+        OR @desc LIKE '%Hunter, Neutral, no freebattle team%'    -- Hunter
+        OR @desc LIKE '%Robber, Neutral, no freebattle team%'    -- Thief
+        OR @desc like '%no job, Neutral, %no job, Neutral%'    -- Free PVP
+    )
+    BEGIN
+        -- Get killer name
+        DECLARE @killername VARCHAR(512) = @desc
+        DECLARE @killeriD INT = 0
+		SELECT  @killername = REPLACE(@killername, LEFT(@killername, CHARINDEX('(', @killername)),'')
+		SELECT  @killername = REPLACE(@killername, RIGHT(@killername, CHARINDEX(')', REVERSE(@killername))),'')
+        SELECT @killeriD = CharID FROM [SRO_VT_SHARD].[dbo].[_Char] WHERE CharName16 = @killername
+        -- Get job type
+        DECLARE @jobString VARCHAR(10) = LTRIM(RTRIM(SUBSTRING (@desc, 5, 7)))
+        DECLARE @jobType INT = CASE
+            WHEN @jobString LIKE 'Trader' THEN 1
+            WHEN @jobString LIKE 'Robber' THEN 2
+            WHEN @jobString LIKE 'Hunter' THEN 3
+            ELSE 0 END
+        -- Delete original log
+        DELETE FROM _LogEventChar WHERE CharID = @CharID AND EventID = 20
+            AND (strDesc LIKE '%Trader, Neutral, no freebattle team%'
+            OR strDesc LIKE '%Hunter, Neutral, no freebattle team%'
+            OR strDesc LIKE '%Robber, Neutral, no freebattle team%'
+            OR @desc like '%no job, Neutral, %no job, Neutral%')
+        -- Get additional info for notice message
+        DECLARE @jobDesc VARCHAR(32) = CASE WHEN @jobType BETWEEN 1 AND 3 THEN 'Job Conflict' ELSE 'Free PVP' END
+        DECLARE @strDesc VARCHAR(512)
+        IF  (@jobString LIKE 'Trader' OR @jobString LIKE 'Robber' OR @jobString LIKE 'Hunter')
+        BEGIN
+            -- If it's a Job Kill, then write character nicknames
+            DECLARE @killerNickName VARCHAR(64) = (SELECT NickName16 FROM [SRO_VT_SHARD].[dbo].[_Char] WHERE CharID = @killeriD)
+            DECLARE @CharnickName VARCHAR(64) = (SELECT NickName16 FROM [SRO_VT_SHARD].[dbo].[_Char] WHERE CharID = @CharID)
+            SET @strDesc = '[' + @killerNickName + '] has just killed [' + @CharnickName + '] in [' + @jobDesc + '] mode on [' + CONVERT(NVARCHAR(30), GETDATE(), 0) + ']'
+        END
+
+        ELSE BEGIN
+            -- If it's normal PVP Kill, write real character names
+            SET @strDesc = '[' + @killername + '] has just killed [' + @CharName + '] in [' + @jobDesc + '] mode on [' + CONVERT(NVARCHAR(30), GETDATE(), 0) + ']'
+        END
+        -- Update the log
+        INSERT INTO pvp_records VALUES (@killername, @killeriD, @CharName, @CharID, @jobType, @strPos, @strDesc, GETDATE())
+    END
+END
+```
+
 5. Install php dependencies with composer
 ```bash
 composer install
