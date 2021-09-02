@@ -1,7 +1,7 @@
 title: Vouchers
 template: extrahead.html
 
-<a href="hhttps://github.com/Devsome/silkroad-laravel/blob/master/config/vouchers.php" target="_blank">config/vouchers.php</a>
+<a href="https://github.com/Devsome/silkroad-laravel/blob/master/config/vouchers.php" target="_blank">config/vouchers.php</a>
 
 ```php
 /*
