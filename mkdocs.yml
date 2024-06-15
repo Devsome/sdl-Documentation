@@ -38,6 +38,10 @@ google_analytics:
   - G-XZL5VBRXXD
   - auto
 
+analytics:
+    provider: google
+    property: G-XZL5VBRXXD
+
 nav:
   - Home:
     - "introduction.md"
